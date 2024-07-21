@@ -414,16 +414,14 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  // Para cambiar estos mensajes, solo los archivos en la carpeta de language, 
-  // busque la clave "handler" dentro del json y cámbiela si es necesario
-  conn.welcome = '👋 ¡Bienvenido/a!\n@user';
-  conn.bye = '👋 ¡Hasta luego!\n@user';
-  conn.spromote = '*[ ℹ️ ] @user Fue promovido a administrador.*';
-  conn.sdemote = '*[ ℹ️ ] @user Fue degradado de administrador.*';
-  conn.sDesc = '*[ ℹ️ ] La descripción del grupo ha sido modificada.*';
-  conn.sSubject = '*[ ℹ️ ] El nombre del grupo ha sido modificado.*';
-  conn.sIcon = '*[ ℹ️ ] Se ha cambiado la foto de perfil del grupo.*';
-  conn.sRevoke = '*[ ℹ️ ] El enlace de invitación al grupo ha sido restablecido.*';
+  conn.welcome = '@subject\n 𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒙\n @user \n\n 𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒄𝒊𝒐𝒏:\n\n@desc\n\n 𝐅𝐑𝐄𝐄 𝐘𝐈𝐑𝐎𝐒 𝐁𝐎𝐓';
+  conn.bye = '@user \n𝑯𝒂𝒔𝒕𝒂 𝑵𝒖𝒏𝒄𝒂! \n𝐅𝐑𝐄𝐄 𝐘𝐈𝐑𝐎𝐒 𝐁𝐎𝐓';
+  conn.spromote = '*[ 👾 ] @user Fue promovido a administrador.*';
+  conn.sdemote = '*[ 👾 ] @user Fue degradado de administrador.*';
+  conn.sDesc = '*[ 👾 ] La descripción del grupo ha sido modificada.*';
+  conn.sSubject = '*[ 👾 ] El nombre del grupo ha sido modificado.*';
+  conn.sIcon = '*[ 👾 ] Se ha cambiado la foto de perfil del grupo.*';
+  conn.sRevoke = '*[ 👾 ] El enlace de invitación al grupo ha sido restablecido.*';
 
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
@@ -577,9 +575,9 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `[ ⏳ ] Uptime: ${uptime}`;
+  const bio = `[ ⏳ ] Uptime: ${uptime} 𝘽𝙊𝙏 𝘾𝙍𝙀𝘼𝘿𝙊 𝙋𝙊𝙍 𝙔𝙄𝙍𝙊 𝘼𝘿𝙌𝙐𝙄𝙀𝙍𝙀 𝙀𝙇 𝙏𝙐𝙇𝙇𝙊 𝘼𝙇 𝙒𝙋:+525636167834 𝙊 𝙄𝙂:𝙔𝙞𝙧𝙤_𝙗𝙤𝙩𝙨`;
   await conn.updateProfileStatus(bio).catch((_) => _);
-}, 60000);
+}, 30000);
 function clockString(ms) {
   const d = isNaN(ms) ? '--' : Math.floor(ms / 86400000);
   const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24;
