@@ -81,7 +81,7 @@ global.loadDatabase = async function loadDatabase() {
 };
 loadDatabase();
 
-/* Creditos a Otosaka (https://wa.me/51993966345) */
+/* Creditos a Otosaka (https://wa.me/525636167834) */
 
 global.chatgpt = new Low(new JSONFile(path.join(__dirname, '/db/chatgpt.json')));
 global.loadChatgptDB = async function loadChatgptDB() {
@@ -108,7 +108,7 @@ loadChatgptDB();
 
 /* ------------------------------------------------*/
 
-global.authFile = `MysticSession`;
+global.authFile = `Teletransportation-bot`;
 const {state, saveState, saveCreds} = await useMultiFileAuthState(global.authFile);
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
@@ -143,7 +143,7 @@ const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['TheMystic-Bot-MD', 'Safari', '2.0.0'] : methodCodeQR ? ['TheMystic-Bot-MD', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '20.0.04'],
+browser: opcion == '1' ? ['Teletransportation-bot', 'Safari', '2.0.0'] : methodCodeQR ? ['Teletransportation-bot', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '20.0.04'],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -274,13 +274,13 @@ fs.watch(dirToWatchccc, (eventType, filename) => {
 
 function purgeSession() {
 let prekey = []
-let directorio = readdirSync("./MysticSession")
+let directorio = readdirSync("./Teletransportation bot")
 let filesFolderPreKeys = directorio.filter(file => {
 return file.startsWith('pre-key-') /*|| file.startsWith('session-') || file.startsWith('sender-') || file.startsWith('app-') */
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
-unlinkSync(`./MysticSession/${files}`)
+unlinkSync(`./Teletransportation bot/${files}`)
 })
 } 
 
@@ -414,14 +414,14 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '@subject\n 𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒙\n @user \n\n 𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒄𝒊𝒐𝒏:\n\n@desc\n\n 𝐅𝐑𝐄𝐄 𝐘𝐈𝐑𝐎𝐒 𝐁𝐎𝐓';
-  conn.bye = '@user \n𝑯𝒂𝒔𝒕𝒂 𝑵𝒖𝒏𝒄𝒂! \n𝐅𝐑𝐄𝐄 𝐘𝐈𝐑𝐎𝐒 𝐁𝐎𝐓';
-  conn.spromote = '*[ 👾 ] @user Fue promovido a administrador.*';
-  conn.sdemote = '*[ 👾 ] @user Fue degradado de administrador.*';
-  conn.sDesc = '*[ 👾 ] La descripción del grupo ha sido modificada.*';
-  conn.sSubject = '*[ 👾 ] El nombre del grupo ha sido modificado.*';
-  conn.sIcon = '*[ 👾 ] Se ha cambiado la foto de perfil del grupo.*';
-  conn.sRevoke = '*[ 👾 ] El enlace de invitación al grupo ha sido restablecido.*';
+  conn.welcome = '@subject\n 𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒙\n @user \n\n 𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒄𝒊𝒐𝒏:\n\n@desc\n\n Teletransportation bot';
+  conn.bye = '@user \n𝑯𝒂𝒔𝒕𝒂 𝑵𝒖𝒏𝒄𝒂! \nBY Teletransportation bot';
+  conn.spromote = '*[ ⚜️ ] @user Fue promovido a administrador.*';
+  conn.sdemote = '*[ ⚜️ ] @user Fue degradado de administrador.*';
+  conn.sDesc = '*[ ⚜️ ] La descripción del grupo ha sido modificada.*';
+  conn.sSubject = '*[ ⚜️ ] El nombre del grupo ha sido modificado.*';
+  conn.sIcon = '*[ ⚜️ ] Se ha cambiado la foto de perfil del grupo.*';
+  conn.sRevoke = '*[ ⚜️ ] El enlace de invitación al grupo ha sido restablecido.*';
 
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
@@ -575,7 +575,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `[ ⏳ ] Uptime: ${uptime} 𝘽𝙊𝙏 𝘾𝙍𝙀𝘼𝘿𝙊 𝙋𝙊𝙍 𝙔𝙄𝙍𝙊 𝘼𝘿𝙌𝙐𝙄𝙀𝙍𝙀 𝙀𝙇 𝙏𝙐𝙇𝙇𝙊 𝘼𝙇 𝙒𝙋:+525636167834 𝙊 𝙄𝙂:𝙔𝙞𝙧𝙤_𝙗𝙤𝙩𝙨`;
+  const bio = `${global.packname} \n║ ✅   \n ${uptime} ⌛ DUEÑO BY CESAR`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 30000);
 function clockString(ms) {
