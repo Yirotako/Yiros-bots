@@ -11,8 +11,8 @@ global.botnumber = ""
 global.confirmCode = ""
 
 global.owner = [
-  ['5218134565961', '⚜️Teletransportation-bot ⚜️', true],
-  ['5218134565961', '💫 Teletransportation-bot 2 ⚜️', true],
+  ['5215636167834', '⚜️Teletransportation-bot ⚜️', true],
+  ['5215636167834', '💫 Teletransportation-bot 2 ⚜️', true],
   ['5218134565961', '💫 Teletransportation-bot 3 ⚜️', true],
   ['5218134565961', '💫 Teletransportation-bot 4 ⚜️', true],
   ['5218134565961', '💫 Teletransportation-bot 5 ⚜️', true],
@@ -24,8 +24,8 @@ global.owner = [
   ['5218134565961', '💫 Teletransportation-bot⚜️', true], 
   ['5218134565961', '💫 Teletransportation-bot⚜️', true],
   ['5218134565961', '💫 Teletransportation-bot⚜️', true], 
-  ['5218134565961'],
-  ['5218134565961'],
+  ['5215636167834'],
+  ['5215636167834'],
   ['5218134565961'],
   ['5218134565961'],
   ['5218134565961'], 
