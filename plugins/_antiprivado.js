@@ -1,15 +1,4 @@
-// TheMystic-Bot-MD@BrunoSobrino - _antiprivado.js
-
-   // Para configurar o idioma, na raiz do projeto altere o arquivo config.json
-  // Para configurar el idioma, en la raíz del proyecto, modifique el archivo config.json.
-  // To set the language, in the root of the project, modify the config.json file.
-
 export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) {
-    const datas = global
-    const idioma = datas.db.data.users[m.sender].language
-    const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
-    const tradutor = _translate.plugins._antiprivado
-
   if (m.isBaileys && m.fromMe) return !0;
   if (m.isGroup) return !1;
   if (!m.message) return !0;
@@ -17,8 +6,10 @@ export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) 
   const chat = global.db.data.chats[m.chat];
   const bot = global.db.data.settings[this.user.jid] || {};
   if (bot.antiPrivate && !isOwner && !isROwner) {
-    await m.reply(tradutor.texto1, false, {mentions: [m.sender]});
+    await m.reply(`*[❗] ʜᴏʟᴀ @${m.sender.split`@`[0]}, 𝙃𝙊𝙇𝘼 𝙎𝙊𝙔 𝙔𝙄𝙍𝙊 𝘽𝙊𝙏 𝙔 𝙈𝙀 𝙍𝙀𝙎𝙀𝙍𝙑𝙊 𝙎𝙊𝙇𝙊 𝘼𝙇 𝙐𝙎𝙊 𝙀𝙉 𝙂𝙍𝙐𝙋𝙊𝙎, 𝙋𝙊𝙍 𝙌𝙐𝙀 𝙎𝙄 𝙂𝙐𝙎𝙏𝘼𝙎 𝘼𝘿𝙌𝙐𝙄𝙍𝙄𝙍 𝙈𝙄𝙎 𝙎𝙀𝙍𝙑𝙄𝘾𝙄𝙊𝙎 𝙏𝙀 𝙄𝙉𝙑𝙄𝙏𝙊 𝘼 𝙈𝙄 𝙂𝙍𝙐 𝘿𝙀 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋 𝙔 𝘼𝙇𝙂Ú𝙉 𝘿𝙄𝙎𝙏𝙍𝙄𝘽𝙐𝙄𝘿𝙊𝙍 𝘼𝙐𝙏𝙊𝙍𝙄𝙕𝘼𝘿𝙊 𝙋𝙐𝙀𝘿𝘼 𝘼𝙏𝙀𝙉𝘿𝙀𝙍𝙏𝙀 \n https://chat.whatsapp.com/KRnesA7HbidIa3va6X8un8 .*`, false, {mentions: [m.sender]});
     await this.updateBlockStatus(m.chat, 'block');
   }
   return !1;
 }
+
+
